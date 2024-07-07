@@ -2,13 +2,16 @@
 
 A simple powerup to Trello to add a maximum points, and a current point value as a card-button to a card to track completion.
 
-## License
-The MIT License (MIT)
+## How to use
 
-Copyright (c) 2015 Chris Kibble
+Trello power ups are rather easy to code, albeit with a few gotchas that the documentation doesn't say clearly.
+1. Under the Basic information for the power up for "Iframe connector URL", it says that it wants a link to the HTML page but
+I couldn't get it to work with a url to a html. It had to be a url to a domain or sub-domain. Not a big issue,
+as you can simply serve the html as the default file. But it took some troubleshooting to get right.
+2. You must not forget to set the Capabilities that you need. Otherwise, nothing
+will happen!
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Although the initial intent was to use a node.js server, what I had on hand easily
+was an Apache web server. So I just dumped the files into the public_html folder
+and set the CORS setting for the domain. Deployment was manual since I was too
+lazy to set up an SSH script to do the file transfer.
